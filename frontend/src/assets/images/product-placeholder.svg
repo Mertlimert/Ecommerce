@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f0f0"/>
+  <text x="150" y="150" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#757575" text-anchor="middle" dominant-baseline="middle">
+    Ürün Görseli Yüklenemedi
+  </text>
+  <path d="M144 80a16 16 0 1 1-16 16 16 16 0 0 1 16-16m0-8a24 24 0 1 0 24 24 24 24 0 0 0-24-24zm64 72a32 32 0 0 0-32-32h-64a32 32 0 0 0-32 32v32h128zm-25.9-32H160a40 40 0 0 1 22.1 36.7zM112 120a40 40 0 0 1 22.1 36.7L112 120zm64 0v36.7L154.1 120z" fill="#9e9e9e"/>
+</svg>

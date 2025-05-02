@@ -1,0 +1,77 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 16px;
+
+  mat-card-header {
+    margin-bottom: 16px;
+  }
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.name-fields {
+  display: flex;
+  gap: 16px;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.half-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.register-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+    gap: 16px;
+
+    button, a {
+      width: 100%;
+    }
+  }
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 0.875rem;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.success-message {
+  color: #4caf50;
+  font-size: 0.875rem;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+button[type="submit"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mat-spinner {
+    margin-right: 10px;
+  }
+}

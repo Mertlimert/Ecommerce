@@ -1,0 +1,63 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <div class="container">
+    <a routerLink="/" class="logo">
+      <span>E-Commerce</span>
+    </a>
+
+    <div class="spacer"></div>
+
+    <div class="nav-links">
+      <a mat-button routerLink="/products">Ürünler</a>
+      <a mat-button routerLink="/categories">Kategoriler</a>
+
+      <!-- Yetkilendirilmiş kullanıcı menüsü -->
+      <ng-container *ngIf="isLoggedIn">
+        <a mat-button routerLink="/cart">
+          <mat-icon matBadge="{{cartItemCount}}" matBadgeColor="accent" [matBadgeHidden]="cartItemCount === 0">shopping_cart</mat-icon>
+          Sepet
+        </a>
+
+        <button mat-button [matMenuTriggerFor]="userMenu">
+          <mat-icon>account_circle</mat-icon>
+          {{ currentUser?.firstName || 'Kullanıcı' }}
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+
+        <mat-menu #userMenu="matMenu">
+          <a mat-menu-item routerLink="/my-orders">
+            <mat-icon>receipt</mat-icon>
+            <span>Siparişlerim</span>
+          </a>
+          <a mat-menu-item routerLink="/profile">
+            <mat-icon>person</mat-icon>
+            <span>Profil</span>
+          </a>
+          <ng-container *ngIf="isAdmin">
+            <mat-divider></mat-divider>
+            <a mat-menu-item routerLink="/admin">
+              <mat-icon>admin_panel_settings</mat-icon>
+              <span>Admin Paneli</span>
+            </a>
+          </ng-container>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Çıkış Yap</span>
+          </button>
+        </mat-menu>
+      </ng-container>
+
+      <!-- Misafir kullanıcı menüsü -->
+      <ng-container *ngIf="!isLoggedIn">
+        <a mat-button routerLink="/login">
+          <mat-icon>login</mat-icon>
+          Giriş
+        </a>
+        <a mat-button routerLink="/register">
+          <mat-icon>person_add</mat-icon>
+          Kayıt Ol
+        </a>
+      </ng-container>
+    </div>
+  </div>
+</mat-toolbar>
